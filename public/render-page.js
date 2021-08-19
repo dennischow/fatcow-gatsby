@@ -3062,31 +3062,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "apiRunnerAsync": () => (/* binding */ apiRunnerAsync)
 /* harmony export */ });
 var plugins = [{
+  name: 'gatsby-plugin-react-helmet',
+  plugin: __webpack_require__(/*! ./node_modules/gatsby-plugin-react-helmet/gatsby-ssr */ "./node_modules/gatsby-plugin-react-helmet/gatsby-ssr.js"),
+  options: {
+    "plugins": []
+  }
+}, {
   name: 'gatsby-plugin-image',
   plugin: __webpack_require__(/*! ./node_modules/gatsby-plugin-image/gatsby-ssr */ "./node_modules/gatsby-plugin-image/gatsby-ssr.js"),
   options: {
     "plugins": []
   }
 }, {
-  name: 'gatsby-plugin-feed',
-  plugin: __webpack_require__(/*! ./node_modules/gatsby-plugin-feed/gatsby-ssr */ "./node_modules/gatsby-plugin-feed/gatsby-ssr.js"),
-  options: {
-    "plugins": [],
-    "query": "\n          {\n            site {\n              siteMetadata {\n                title\n                description\n                siteUrl\n                site_url: siteUrl\n              }\n            }\n          }\n        ",
-    "feeds": [{
-      "query": "\n              {\n                allMarkdownRemark(\n                  sort: { order: DESC, fields: [frontmatter___date] },\n                ) {\n                  nodes {\n                    excerpt\n                    html\n                    fields {\n                      slug\n                    }\n                    frontmatter {\n                      title\n                      date\n                    }\n                  }\n                }\n              }\n            ",
-      "output": "/rss.xml"
-    }]
-  }
-}, {
   name: 'gatsby-plugin-manifest',
   plugin: __webpack_require__(/*! ./node_modules/gatsby-plugin-manifest/gatsby-ssr */ "./node_modules/gatsby-plugin-manifest/gatsby-ssr.js"),
   options: {
     "plugins": [],
-    "name": "Gatsby Starter Blog",
-    "short_name": "GatsbyJS",
+    "name": "gatsby-starter-default",
+    "short_name": "starter",
     "start_url": "/",
-    "background_color": "#ffffff",
+    "background_color": "#663399",
     "theme_color": "#663399",
     "display": "minimal-ui",
     "icon": "src/images/gatsby-icon.png",
@@ -3096,12 +3091,6 @@ var plugins = [{
     "crossOrigin": "anonymous",
     "include_favicon": true,
     "cacheDigest": "4a9773549091c227cd2eb82ccd9c5e3a"
-  }
-}, {
-  name: 'gatsby-plugin-react-helmet',
-  plugin: __webpack_require__(/*! ./node_modules/gatsby-plugin-react-helmet/gatsby-ssr */ "./node_modules/gatsby-plugin-react-helmet/gatsby-ssr.js"),
-  options: {
-    "plugins": []
   }
 }];
 /* global plugins */
@@ -4540,110 +4529,6 @@ function stripPrefix(str, prefix = ``) {
 
   return str;
 }
-
-/***/ }),
-
-/***/ "./node_modules/gatsby-plugin-feed/gatsby-ssr.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/gatsby-plugin-feed/gatsby-ssr.js ***!
-  \*******************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-
-var _extends2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js"));
-
-var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
-
-var _gatsby = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
-
-var _internals = __webpack_require__(/*! ./internals */ "./node_modules/gatsby-plugin-feed/internals.js"); // TODO: remove for v3
-
-
-var withPrefix = _gatsby.withAssetPrefix || _gatsby.withPrefix;
-
-exports.onRenderBody = function (_ref, pluginOptions) {
-  var setHeadComponents = _ref.setHeadComponents,
-      pathname = _ref.pathname;
-
-  var _defaultOptions$plugi = (0, _extends2.default)({}, _internals.defaultOptions, pluginOptions),
-      feeds = _defaultOptions$plugi.feeds;
-
-  var links = feeds.filter(function (_ref2) {
-    var match = _ref2.match;
-    if (typeof match === "string") return new RegExp(match).exec(pathname);
-    return true;
-  }).map(function (_ref3, i) {
-    var output = _ref3.output,
-        title = _ref3.title,
-        link = _ref3.link;
-    var href = link || withPrefix(output.replace(/^\/?/, "/"));
-    return /*#__PURE__*/_react.default.createElement("link", {
-      key: "gatsby-plugin-feed-" + i,
-      rel: "alternate",
-      type: "application/rss+xml",
-      title: title,
-      href: href
-    });
-  });
-  setHeadComponents(links);
-};
-
-/***/ }),
-
-/***/ "./node_modules/gatsby-plugin-feed/internals.js":
-/*!******************************************************!*\
-  !*** ./node_modules/gatsby-plugin-feed/internals.js ***!
-  \******************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-
-exports.__esModule = true;
-exports.defaultOptions = exports.runQuery = void 0;
-
-var _extends2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js"));
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js"));
-
-var _excluded = ["query"];
-
-var runQuery = function runQuery(handler, query) {
-  return handler(query).then(function (r) {
-    if (r.errors) {
-      throw new Error(r.errors.join(", "));
-    }
-
-    return r.data;
-  });
-};
-
-exports.runQuery = runQuery;
-var defaultOptions = {
-  // Override if you want to manually specify the RSS "generator" tag.
-  generator: "GatsbyJS",
-  // Run a default query to gather some information about the site.
-  query: "\n    {\n      site {\n        siteMetadata {\n          title\n          description\n          siteUrl\n          site_url: siteUrl\n        }\n      }\n    }\n  ",
-  // Setup an RSS object, merging on various feed-specific options.
-  setup: function setup(_ref) {
-    var siteMetadata = _ref.query.site.siteMetadata,
-        rest = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
-    return (0, _extends2.default)({}, siteMetadata, rest);
-  },
-  // Create a default RSS feed. Others may be added by using the format below.
-  feeds: [{
-    query: "\n      {\n        allMarkdownRemark(\n          limit: 1000,\n          sort: {\n            order: DESC,\n            fields: [frontmatter___date]\n          }\n        ) {\n          edges {\n            node {\n              frontmatter {\n                title\n                date\n              }\n              fields {\n                slug\n              }\n              excerpt\n              html\n            }\n          }\n        }\n      }\n    ",
-    // Where we will save the feed generated by this query.
-    output: "rss.xml"
-  }]
-};
-exports.defaultOptions = defaultOptions;
 
 /***/ }),
 
@@ -11578,24 +11463,24 @@ module.exports = withSideEffect;
 /***/ }),
 
 /***/ "react-dom/server":
-/*!***************************************************************************************!*\
-  !*** external "/Users/dennischow/Desktop/fc-gatsby/node_modules/react-dom/server.js" ***!
-  \***************************************************************************************/
+/*!*******************************************************************************************!*\
+  !*** external "/Users/dennischow/Desktop/fatcow-gatsby/node_modules/react-dom/server.js" ***!
+  \*******************************************************************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("/Users/dennischow/Desktop/fc-gatsby/node_modules/react-dom/server.js");
+module.exports = require("/Users/dennischow/Desktop/fatcow-gatsby/node_modules/react-dom/server.js");
 
 /***/ }),
 
 /***/ "react":
-/*!**********************************************************************************!*\
-  !*** external "/Users/dennischow/Desktop/fc-gatsby/node_modules/react/index.js" ***!
-  \**********************************************************************************/
+/*!**************************************************************************************!*\
+  !*** external "/Users/dennischow/Desktop/fatcow-gatsby/node_modules/react/index.js" ***!
+  \**************************************************************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("/Users/dennischow/Desktop/fc-gatsby/node_modules/react/index.js");
+module.exports = require("/Users/dennischow/Desktop/fatcow-gatsby/node_modules/react/index.js");
 
 /***/ }),
 
