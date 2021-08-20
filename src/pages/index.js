@@ -2,27 +2,40 @@ import * as React from "react";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
-import Layout from "../components/layout";
+import Layout from "../components/layout/layout";
 import Seo from "../components/seo";
 
 const IndexPage = () => (
     <Layout>
-        <Seo title="Home" />
-        <h1>Hi people</h1>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
-        <StaticImage
-            src="../images/gatsby-astronaut.png"
-            width={300}
-            quality={95}
-            formats={["AUTO", "WEBP", "AVIF"]}
-            alt="A Gatsby astronaut"
-            style={{ marginBottom: `1.45rem` }}
-        />
-        <p>
-            <Link to="/about/">Go to page 2</Link> <br />
-            <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-        </p>
+        <div className="page-landing layout-page-view">
+
+            <div className="greeting">
+                <div className="grid-container">
+                    <Seo title="Home" />
+                    <h1>Sup Dude</h1>
+                    <p>Welcome to your new Gatsby site.</p>
+                    <p>Now go build something great.</p>
+                </div>
+            </div>
+
+            <div className="features">
+                <div className="grid-container">
+                    <StaticImage
+                        src="../images/gatsby-astronaut.png"
+                        width={300}
+                        quality={95}
+                        formats={["AUTO", "WEBP", "AVIF"]}
+                        alt="A Gatsby astronaut"
+                        style={{ marginBottom: `1.45rem` }}
+                    />
+                    <p className="c-button-container">
+                        <Link className="c-btn" to="/about/">Go to page 2</Link> <br />
+                        <Link className="c-btn" to="/using-typescript/">Go to "Using TypeScript"</Link>
+                    </p>
+                </div>
+            </div>
+
+        </div>
     </Layout>
 );
 
