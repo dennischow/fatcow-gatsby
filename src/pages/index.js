@@ -10,7 +10,7 @@ const IndexPage = () => (
         <div className="page-landing layout-page-view">
 
             <div className="greeting">
-                <div className="grid-container">
+                <div className="c-grid-container">
                     <Seo title="Home" />
                     <h1>Sup Dude</h1>
                     <p>Welcome to your new Gatsby site.</p>
@@ -19,7 +19,7 @@ const IndexPage = () => (
             </div>
 
             <div className="features">
-                <div className="grid-container">
+                <div className="c-grid-container">
                     <StaticImage
                         src="../images/gatsby-astronaut.png"
                         width={300}

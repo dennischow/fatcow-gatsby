@@ -9,7 +9,7 @@ const PageAbout = () => (
         <div className="page-about layout-page-view">
 
             <div className="about">
-                <div className="grid-container">
+                <div className="c-grid-container">
 
                     <Seo title="About" />
                     <h1>Hi from the about page</h1>
