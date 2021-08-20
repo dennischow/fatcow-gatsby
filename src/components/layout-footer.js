@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "gatsby";
 
-const Footer = () => (
+const LayoutFooter = () => (
     <footer
         style={{
             margin: `0 auto`,
@@ -9,8 +9,8 @@ const Footer = () => (
             padding: `0 1.0875rem 1.45rem`,
         }}>
         © {new Date().getFullYear()}, Built with {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <Link to="/">Gatsby</Link>
     </footer>
 );
 
-export default Footer;
+export default LayoutFooter;
