@@ -2,12 +2,13 @@ import * as React from "react";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
+import * as constant from "./../app.constant";
 import Layout from "../components/layout/layout";
 import Seo from "../components/seo";
 
 const IndexPage = () => (
     <Layout>
-        <div className="page-landing layout-page-view">
+        <div className="page-landing layout-page">
 
             <div className="greeting">
                 <div className="c-grid-container">
@@ -29,8 +30,8 @@ const IndexPage = () => (
                         style={{ marginBottom: `1.45rem` }}
                     />
                     <p className="c-button-container">
-                        <Link className="c-btn" to="/about/">Go to page 2</Link> <br />
-                        <Link className="c-btn" to="/using-typescript/">Go to "Using TypeScript"</Link>
+                        <Link className="c-btn" to={constant._ROUTES_.ABOUT}>Go to about</Link>
+                        <Link className="c-btn c-btn--link" to={constant._ROUTES_.ABOUT}>Go to about</Link>
                     </p>
                 </div>
             </div>

@@ -27,13 +27,15 @@ const Layout = ({ children }) => {
 
     return (
         <>
-            <LayoutHeader siteTitle={data.site.siteMetadata?.title || `Title`} />
+            <div className="layout-view">
+                <LayoutHeader siteTitle={data.site.siteMetadata?.title || `Title`} />
 
-            <main className="layout-main">
-                {children}
-            </main>
+                <main className="layout-main">
+                    {children}
+                </main>
 
-            <LayoutFooter />
+                <LayoutFooter />
+            </div>
         </>
     );
 };

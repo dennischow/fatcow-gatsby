@@ -1,13 +1,16 @@
 import * as React from "react";
 import { Link } from "gatsby";
+import * as constant from "./../../app.constant.js";
 
 const LayoutFooter = () => (
     <footer className="layout-footer">
         <div className="layout-footer__container c-grid-container">
-            <small className="layout-footer__copyright">
-                © {new Date().getFullYear()}, Built with {` `}
-                <Link className="layout-footer__link" to="/">Gatsby</Link>
-            </small>
+            <div className="layout-footer__general">
+                <span>© {new Date().getFullYear()} Fat-Cow Production</span>
+                <span>
+                    Handcrafted by <Link className="layout-footer__link" to={constant._ROUTES_.HOME}>Dennis Chow</Link>
+                </span>
+            </div>
         </div>
     </footer>
 );

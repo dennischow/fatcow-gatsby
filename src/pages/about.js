@@ -6,7 +6,7 @@ import Seo from "../components/seo";
 
 const PageAbout = () => (
     <Layout>
-        <div className="page-about layout-page-view">
+        <div className="page-about layout-page">
 
             <div className="about">
                 <div className="c-grid-container">
