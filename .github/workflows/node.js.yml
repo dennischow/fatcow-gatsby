@@ -30,4 +30,12 @@ jobs:
     - run: rm -fr node_modules
     - run: yarn install --frozen-lockfile
     - run: yarn clean
-    - run: yarn build
+    # - run: yarn build
+    
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        DEPLOY_ACCESS_TOKEN: ${{ secrets.DEPLOY_ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: public
+        BUILD_SCRIPT: yarn deploy
