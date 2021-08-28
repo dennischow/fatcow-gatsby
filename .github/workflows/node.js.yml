@@ -27,8 +27,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        persist-credentials: false
     - run: rm -fr node_modules
     - run: yarn install --frozen-lockfile
     - run: yarn clean
-    - run: yarn deploy
+    - run: yarn build
