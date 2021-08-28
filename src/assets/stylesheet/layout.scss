@@ -1,0 +1,111 @@
+.layout-view {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.layout-header {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 15px 0;
+    width: 100%;
+    background-color: var(--c-white);
+    box-shadow: 0 0 5px rgba(black, 0.2);
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    &__brand {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    &__brand-img {
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-image: url(./../images/common/fc-logo.svg);
+    }
+
+    &__brand-link {
+        display: inline-block;
+        margin-left: 10px;
+        font-size: 14px;
+        color: var(--c-brand-orange);
+        text-decoration: none;
+    }
+
+    &__navigation {
+
+    }
+
+    &__navigation-list {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__navigation-list-item {
+        margin: 0 0 0 20px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+    }
+
+    &__navigation-link {
+        color: var(--c-dark-gray);
+        text-decoration: none;
+    }
+
+}
+
+.layout-footer {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 15px 0;
+    width: 100%;
+    border-top: 1px var(--c-light-gray) solid;
+    background-color: var(--c-white);
+
+    &__container {
+        margin: 0 auto;
+        max-width: 1140px;
+    }
+
+    &__general {
+        display: flex;
+        justify-content: space-between;
+        color: var(--c-gray);
+    }
+
+    &__link {
+        color: var(--c-gray);
+        text-decoration: none;
+    }
+
+}
+
+.layout-main {
+    flex: 1 0 auto;
+    width: 100%;
+}
+
+.layout-page {
+
+}
