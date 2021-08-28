@@ -44,6 +44,7 @@ const IndexPage = () => (
                     <Seo title="Home" />
                     <h1>Sup Dude</h1>
                     <p>Welcome to your new Gatsby site.</p>
+                    <p><strong>Integrated with CI.</strong></p>
                     <p>Now go build something great.</p>
                 </div>
             </div>
