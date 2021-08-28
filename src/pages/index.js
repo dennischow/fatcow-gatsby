@@ -20,7 +20,7 @@ const IndexPage = () => (
                         <div className="feature-banner__content">
                             <h2 className="feature-banner__heading">
                                 <span className="feature-banner__begin-word feature-banner__stacker">Just A</span>
-                                <span className="feature-banner__stacker">Front-End</span>
+                                <span className="feature-banner__stacker">(Testing) Front-End</span>
                                 <span className="feature-banner__stacker">Web Developer</span>
                                 <span className="c-ninja-content"> Dennis Chow a.k.a. Fat-Cow</span>
                             </h2>
