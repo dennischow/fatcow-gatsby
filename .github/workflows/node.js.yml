@@ -29,4 +29,4 @@ jobs:
     - run: rm -fr node_modules
     - run: yarn install --frozen-lockfile
     - run: yarn clean
-    - run: yarn build
+    - run: yarn deploy
