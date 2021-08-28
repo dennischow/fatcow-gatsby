@@ -6,7 +6,7 @@ const LayoutFooter = () => (
     <footer className="layout-footer">
         <div className="layout-footer__container c-grid-container">
             <div className="layout-footer__general">
-                <span>© {new Date().getFullYear()} Fat-Cow Production (Using action script)</span>
+                <span>© {new Date().getFullYear()} Fat-Cow Production (Using action script to trigger)</span>
                 <span>
                     Handcrafted by <Link className="layout-footer__link" to={constant._ROUTES_.HOME}>Dennis Chow</Link>
                 </span>
